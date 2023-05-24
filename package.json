@@ -2,7 +2,7 @@
   "name": "guess-the-word-bootcamp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ryanlerler.github.io/guess-the-world-bootcamp",
+  "homepage": "https://ryanlerler.github.io/guess-the-word-bootcamp",
   "dependencies": {
     "bootstrap": "^5.2.3",
     "gh-pages": "^5.0.0",
