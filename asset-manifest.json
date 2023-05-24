@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/guess-the-world-bootcamp/static/css/main.2b9d144f.css",
+    "main.js": "/guess-the-world-bootcamp/static/js/main.3a231f80.js",
+    "static/media/10.jpg": "/guess-the-world-bootcamp/static/media/10.33ea70122206d18555de.jpg",
+    "static/media/9.jpg": "/guess-the-world-bootcamp/static/media/9.bb0f0ce1c8b6c8fe0e79.jpg",
+    "static/media/8.jpg": "/guess-the-world-bootcamp/static/media/8.b272e7f1b6733f1c232f.jpg",
+    "static/media/7.jpg": "/guess-the-world-bootcamp/static/media/7.0db4986f22eed20b43f5.jpg",
+    "static/media/6.jpg": "/guess-the-world-bootcamp/static/media/6.27a86c9e28f3136f0d56.jpg",
+    "static/media/5.jpg": "/guess-the-world-bootcamp/static/media/5.9a23caa6d0d1e6035dd0.jpg",
+    "static/media/4.jpg": "/guess-the-world-bootcamp/static/media/4.72059a7fffc7cf1cf38f.jpg",
+    "static/media/3.jpg": "/guess-the-world-bootcamp/static/media/3.026ad3c302bebae67bc9.jpg",
+    "static/media/2.jpg": "/guess-the-world-bootcamp/static/media/2.f8eb6e8a99575e6a582b.jpg",
+    "static/media/1.jpg": "/guess-the-world-bootcamp/static/media/1.eb42be5e165ca348fd21.jpg",
+    "static/media/0.jpg": "/guess-the-world-bootcamp/static/media/0.df41318a690baf1afac0.jpg",
+    "index.html": "/guess-the-world-bootcamp/index.html",
+    "main.2b9d144f.css.map": "/guess-the-world-bootcamp/static/css/main.2b9d144f.css.map",
+    "main.3a231f80.js.map": "/guess-the-world-bootcamp/static/js/main.3a231f80.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b9d144f.css",
+    "static/js/main.3a231f80.js"
+  ]
+}
