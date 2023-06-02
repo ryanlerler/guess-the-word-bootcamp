@@ -1,4 +1,5 @@
-// ToDo: Lift didPlayerWin and isGameOver var to state (?), keep track of roundCount and score, stop the page from refreshing after reset
+// ToDo:
+// Done: keep track of roundCount and score, stop the page from refreshing after reset
 
 import React from "react";
 import { getRandomWord } from "./utils.js";
@@ -62,7 +63,7 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const { currWord, userGuess, guessedLetters } = this.state;
 
     if (guessedLetters.includes(userGuess)) {
@@ -75,10 +76,10 @@ class App extends React.Component {
 
     this.setState((state) => ({
       guessedLetters: [...state.guessedLetters, userGuess],
-      userGuess: "",
       guessCountLeft: currWord.includes(userGuess)
         ? state.guessCountLeft
         : state.guessCountLeft - 1,
+      userGuess: "",
     }));
   };
 
@@ -92,12 +93,17 @@ class App extends React.Component {
     return true;
   };
 
-  resetGame = () => {
-    this.setState({
+  resetGame = (e) => {
+    e.preventDefault();
+
+    this.setState((state) => ({
       currWord: getRandomWord(),
       guessedLetters: [],
       guessCountLeft: 10,
-    });
+      userGuess: "",
+      round: state.round + 1,
+      score: this.declareWin() ? state.score + 1 : state.score,
+    }));
   };
 
   render() {
@@ -126,12 +132,19 @@ class App extends React.Component {
                   ? `${currWord}`
                   : this.generateWordDisplay()}
               </Col>
+
+              <Col>
+                <h3>Round {round}</h3>
+              </Col>
+
               <Col>
                 <h3>Guessed Letters</h3>
                 {guessedLetters.length > 0 ? guessedLetters.toString() : "-"}
               </Col>
             </Row>
-            <h3>Input</h3>
+
+            <h3>Score: {score}</h3>
+
             {/* form element */}
             <form
               onSubmit={
@@ -148,22 +161,21 @@ class App extends React.Component {
                 required={!didPlayerWin && !isGameOver}
               />
               <br />
-              <br />
               <button>
                 {didPlayerWin || isGameOver ? "Another round" : "Submit"}
               </button>
             </form>
             <br />
-            <h3>Round {round}</h3>
             <h3>
-              Number of guesses left: {guessCountLeft}{" "}
-              {logo.repeat(guessCountLeft)}
+              {isGameOver
+                ? "Out of guesses! You lost."
+                : didPlayerWin
+                ? "Correct guess! You won!"
+                : `Number of guesses left: ${guessCountLeft} ${logo.repeat(
+                    guessCountLeft
+                  )}`}
             </h3>
             <img src={images[`./${10 - guessCountLeft}.jpg`]} alt="" />
-            <h3>
-              {isGameOver && "Out of guesses! You lost."}
-              {didPlayerWin && "Correct guess! You won!"}
-            </h3>
           </Container>
         </header>
       </div>
