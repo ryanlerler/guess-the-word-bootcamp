@@ -21,6 +21,8 @@ function importAll(r) {
   return images;
 }
 
+const validTextInput = /^[a-zA-Z]*$/;
+
 class App extends React.Component {
   constructor(props) {
     // Always call super with props in constructor to initialise parent class
@@ -56,9 +58,11 @@ class App extends React.Component {
   // form callback functions handleChange and handleSubmit
   handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({
-      [name]: value.toLowerCase(),
-    });
+    if (validTextInput.test(value)) {
+      this.setState({
+        [name]: value.toLowerCase(),
+      });
+    }
   };
 
   handleSubmit = (e) => {
